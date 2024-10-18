@@ -9,24 +9,9 @@ public class ButtonController : MonoBehaviour
 {
     public GameObject StartButton;
     public static bool startflag=false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     // local用
     public void StartButtonClick(){
-        SceneManager.LoadScene("LocalExplainScene");
-    }
-
-    public void OKButtonClick(){
         SceneManager.LoadScene("GameScene");
     }
     public void GameStartButtonClick(){

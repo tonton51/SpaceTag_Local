@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
 
 // アイテムを生成するためのスクリプト
-public class ItemGenerator : MonoBehaviourPunCallbacks
+public class ItemGenerator : MonoBehaviour
 {
     float span=1.0f; // アイテム生成間隔 phton:3.0f,local:1.0f
     float delta=0;
@@ -24,7 +23,6 @@ public class ItemGenerator : MonoBehaviourPunCallbacks
                 if(this.delta>this.span){
                     this.delta=0;
                     float x=Random.Range(-8,8);
-                    // PhotonNetwork.Instantiate("Star",new Vector3(x, 7, 0),Quaternion.identity);
                     Instantiate(Star,new Vector3(x, 7, 0),Quaternion.identity);
                 }
             }

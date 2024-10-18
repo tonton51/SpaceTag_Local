@@ -16,7 +16,6 @@ public class StarController : MonoBehaviour
         // 点数用
         if(other.gameObject.tag=="kuma"||other.gameObject.tag=="rocket"){ 
             point++;
-
         }
         Destroy(gameObject);
         
