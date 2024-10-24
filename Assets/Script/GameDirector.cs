@@ -9,7 +9,7 @@ public class GameDirector : MonoBehaviour
 {
     // public TextMeshProUGUI[] pointtext;
     public TextMeshProUGUI Rpointtext;
-    public float delta=63.0f; // 制限時時間
+    public float delta=48.0f; // 制限時時間
     float count=3.0f; // カウントダウン
     public TextMeshProUGUI timertext;
     public TextMeshProUGUI counttext;
@@ -26,6 +26,7 @@ public class GameDirector : MonoBehaviour
     void Update()
     {
         startflag=ButtonController.startflag;
+        Debug.Log(delta);
         
         Rpoint=StarController.point;
         Rpointtext.text=Rpoint.ToString();
@@ -34,7 +35,7 @@ public class GameDirector : MonoBehaviour
             counttext.enabled=true;
             // 時間管理
             this.delta-=Time.deltaTime;
-            if(this.delta<=60.0f){
+            if(this.delta<=45.0f){
                 counttext.enabled=false;
                 timertext.text=this.delta.ToString("F2");
                 // 制限時間が0になったらシーン遷移

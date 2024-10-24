@@ -20,9 +20,13 @@ public class ServerScript : MonoBehaviour
     private float rockety;
 
     private float gametime;
+    private float kumaPx;
+    private float kumaPy;
+    private float rocketPx;
+    private float rocketPy;
 
     // 配列の個数を設定
-    static int numVars = 5;
+    static int numVars = 9;
     private float[] txFloatArray = new float[numVars];
     private byte[] txByteArray = new byte[numVars * 4];
 
@@ -45,10 +49,14 @@ public class ServerScript : MonoBehaviour
     private void Update()
     {
         gametime=GameDirector.GetComponent<GameDirector>().delta;
-        kumax = Input.GetAxis("HorizontalL");
-        kumay = Input.GetAxis("VerticalL");
-        rocketx = Input.GetAxis("HorizontalR");
-        rockety = Input.GetAxis("VerticalR");
+        kumax = Input.GetAxis("PS5HorizontalL");
+        kumay = Input.GetAxis("PS5VerticalL");
+        rocketx = Input.GetAxis("PS5HorizontalR");
+        rockety = Input.GetAxis("PS5VerticalR");
+        kumaPx=Player1.transform.position.x;
+        kumaPy=Player1.transform.position.y;
+        rocketPx=Player2.transform.position.x;
+        rocketPy=Player2.transform.position.y;
 
     }
 
@@ -60,6 +68,10 @@ public class ServerScript : MonoBehaviour
         txFloatArray[2] = kumay;
         txFloatArray[3] = rocketx;
         txFloatArray[4] = rockety;
+        txFloatArray[5]=kumaPx;
+        txFloatArray[6]=kumaPy;
+        txFloatArray[7]=rocketPx;
+        txFloatArray[8]=rocketPy;
 
         if (stream != null)
         {
