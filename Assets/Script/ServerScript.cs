@@ -49,10 +49,10 @@ public class ServerScript : MonoBehaviour
     private void Update()
     {
         gametime=GameDirector.GetComponent<GameDirector>().delta;
-        kumax = Input.GetAxis("PS5HorizontalL");
-        kumay = Input.GetAxis("PS5VerticalL");
-        rocketx = Input.GetAxis("PS5HorizontalR");
-        rockety = Input.GetAxis("PS5VerticalR");
+        kumax = Input.GetAxis("Stick1Horizontal");
+        kumay = Input.GetAxis("Stick1Vertical");
+        rocketx = Input.GetAxis("Stick2Horizontal");
+        rockety = Input.GetAxis("Stick2Vertical");
         kumaPx=Player1.transform.position.x;
         kumaPy=Player1.transform.position.y;
         rocketPx=Player2.transform.position.x;
